@@ -11,6 +11,9 @@
         <li>A <filepath>Dockerfile</filepath> exists in the project root folder.</li>
       </ul>
     </prereq>
+     <context>
+      <note conref="../../shared/warnings.dita#shared-warnings/aws-cost"/>
+    </context>
     <steps>
       <step>
         <cmd>Open a terminal in the project root folder.</cmd>

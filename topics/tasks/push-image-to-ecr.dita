@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="push-image-to-ecr">
+  <title>Push the Docker image to Amazon ECR</title>
+  <shortdesc>Upload the image to a private Amazon ECR repository so that AWS can run it.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>The Docker image is built.</li>
+        <li>The AWS CLI is installed and configured.</li>
+        <li>A private ECR repository named <codeph>helloworld</codeph> exists.</li>
+      </ul>
+    </prereq>
+    <context>
+      <note conref="../../shared/warnings.dita#shared-warnings/no-secrets"/>
+    </context>
+    <steps>
+      <step>
+        <cmd>Authenticate Docker with Amazon ECR:</cmd>
+        <info><codeblock>aws ecr get-login-password --region &lt;region&gt; | docker login --username AWS --password-stdin &lt;account-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com</codeblock></info>
+        <stepresult>The terminal displays <systemoutput>Login Succeeded</systemoutput>.</stepresult>
+      </step>
+      <step>
+        <cmd>Tag the image with the repository address:</cmd>
+        <info><codeblock>docker tag helloworld:latest &lt;account-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/helloworld:latest</codeblock></info>
+      </step>
+      <step>
+        <cmd>Push the image to the repository:</cmd>
+        <info><codeblock>docker push &lt;account-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/helloworld:latest</codeblock></info>
+      </step>
+    </steps>
+    <result>The image appears in the <uicontrol>helloworld</uicontrol> repository in the Amazon ECR console.</result>
+  </taskbody>
+</task>
