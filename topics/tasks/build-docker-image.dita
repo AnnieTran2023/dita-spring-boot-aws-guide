@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="build-docker-image">
+  <title>Build the Docker image</title>
+  <shortdesc>Package the Spring Boot application into a Docker image that can run on AWS.</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>JDK 17, Maven and Docker Desktop are installed.</li>
+        <li>The application runs locally.</li>
+        <li>A <filepath>Dockerfile</filepath> exists in the project root folder.</li>
+      </ul>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Open a terminal in the project root folder.</cmd>
+      </step>
+      <step>
+        <cmd>Package the application into a JAR file:</cmd>
+        <info><codeblock>mvn clean package</codeblock></info>
+        <stepresult>The file <filepath>helloworld-0.0.1-SNAPSHOT.jar</filepath> is created in the <filepath>target</filepath> folder.</stepresult>
+      </step>
+      <step platform="apple-silicon">
+        <cmd>Build the image for the Linux/AMD64 architecture:</cmd>
+        <info><codeblock>docker build --platform linux/amd64 -t helloworld .</codeblock></info>
+      </step>
+      <step platform="other">
+        <cmd>Build the image:</cmd>
+        <info><codeblock>docker build -t helloworld .</codeblock></info>
+      </step>
+    </steps>
+    <result>The image <codeph>helloworld</codeph> is created.</result>
+  </taskbody>
+</task>
