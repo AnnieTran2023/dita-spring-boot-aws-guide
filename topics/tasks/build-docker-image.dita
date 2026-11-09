@@ -29,6 +29,5 @@
         <info><codeblock>docker build -t helloworld .</codeblock></info>
       </step>
     </steps>
-    <result>The image <codeph>helloworld</codeph> is created.</result>
-  </taskbody>
+<result>The image <codeph><ph keyref="image-name"/></codeph> is created.</result>  </taskbody>
 </task>

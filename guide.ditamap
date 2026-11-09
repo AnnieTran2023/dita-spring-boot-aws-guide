@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Deploying a Spring Boot application on AWS with Docker</title>
+
+  <keydef keys="image-name"><topicmeta><keywords><keyword>helloworld</keyword></keywords></topicmeta></keydef>
+
+  <topicref href="topics/concepts/what-is-docker.dita"/>
+  <topicref href="topics/reference/prerequisites.dita"/>
+  <topicref href="topics/tasks/build-docker-image.dita"/>
+</map>
