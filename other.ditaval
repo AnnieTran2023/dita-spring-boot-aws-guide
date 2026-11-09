@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+  <prop att="platform" val="apple-silicon" action="exclude"/>
+  <prop att="platform" val="other" action="include"/>
+</val>
