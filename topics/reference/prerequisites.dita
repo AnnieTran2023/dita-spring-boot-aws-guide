@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="prerequisites">
+  <title>Prerequisites</title>
+  <shortdesc>Software and accounts required before you deploy the application.</shortdesc>
+  <refbody>
+    <simpletable relcolwidth="1* 2* 1*">
+      <sthead>
+        <stentry>Requirement</stentry>
+        <stentry>Purpose</stentry>
+        <stentry>Version</stentry>
+      </sthead>
+      <strow>
+        <stentry>JDK</stentry>
+        <stentry>Compiles and runs the Spring Boot application.</stentry>
+        <stentry>17</stentry>
+      </strow>
+      <strow>
+        <stentry>Maven</stentry>
+        <stentry>Builds the project and packages it as a JAR file.</stentry>
+        <stentry>Latest</stentry>
+      </strow>
+      <strow>
+        <stentry>Docker Desktop</stentry>
+        <stentry>Builds and runs container images locally.</stentry>
+        <stentry>Latest</stentry>
+      </strow>
+      <strow>
+        <stentry>Code editor</stentry>
+        <stentry>Edits the source code, for example Visual Studio Code.</stentry>
+        <stentry>Any</stentry>
+      </strow>
+      <strow>
+        <stentry>AWS account</stentry>
+        <stentry>Hosts the container image and the application.</stentry>
+        <stentry>Not applicable</stentry>
+      </strow>
+    </simpletable>
+  </refbody>
+</reference>

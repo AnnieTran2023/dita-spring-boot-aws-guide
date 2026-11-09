@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="what-is-docker">
+  <title>What is Docker?</title>
+  <shortdesc>Docker packages an application and everything it needs into a portable unit called a container.</shortdesc>
+  <conbody>
+    <p>A <term>container</term> is a lightweight, isolated environment that runs an application together with its dependencies. A container behaves the same way on a laptop, on a test server and in the cloud.</p>
+    <p>Docker works with four main components:</p>
+    <dl>
+      <dlentry>
+        <dt>Docker client</dt>
+        <dd>The command-line tool you use to send commands, such as <codeph>docker build</codeph>.</dd>
+      </dlentry>
+      <dlentry>
+        <dt>Docker daemon</dt>
+        <dd>The background service that builds, runs and manages containers.</dd>
+      </dlentry>
+      <dlentry>
+        <dt>Image</dt>
+        <dd>A read-only package that contains the files, libraries and configuration needed to run a container.</dd>
+      </dlentry>
+      <dlentry>
+        <dt>Registry</dt>
+        <dd>A storage location for images. Docker Hub is a public registry. Amazon ECR is a private registry on AWS.</dd>
+      </dlentry>
+    </dl>
+    <p>When you run an image, it becomes a container.</p>
+  </conbody>
+</concept>
