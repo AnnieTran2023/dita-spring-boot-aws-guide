@@ -3,7 +3,7 @@
 <topic id="shared-warnings">
   <title>Shared warnings</title>
   <body>
-    <note type="warning" id="aws-cost">AWS resources can incur costs. Delete resources you no longer need after testing.</note>
+    <note type="warning" id="aws-cost">AWS resources can incur cost. Delete resources you no longer need after testing.</note>
     <note type="caution" id="no-secrets">Do not publish your AWS account ID, access keys or tokens in public repositories or documents.</note>
   </body>
 </topic>
