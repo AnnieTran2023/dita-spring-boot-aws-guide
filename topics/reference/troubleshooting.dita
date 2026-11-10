@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="troubleshooting">
+  <title>Troubleshooting</title>
+  <shortdesc>Common problems when containerizing and deploying the application, with causes and solutions.</shortdesc>
+  <refbody>
+    <simpletable relcolwidth="1* 1* 1.5*">
+      <sthead>
+        <stentry>Problem</stentry>
+        <stentry>Cause</stentry>
+        <stentry>Solution</stentry>
+      </sthead>
+      <strow>
+        <stentry>The image builds on your computer but the container does not run on AWS Fargate.</stentry>
+        <stentry>The image was built for ARM64 (Apple Silicon), but Fargate runs Linux/AMD64.</stentry>
+        <stentry>Rebuild the image with <codeph>docker build --platform linux/amd64 -t helloworld .</codeph></stentry>
+      </strow>
+      <strow>
+        <stentry>The application is not reachable from outside the container.</stentry>
+        <stentry>The application listens only on the local address.</stentry>
+        <stentry>In <filepath>application.properties</filepath>, set <codeph>server.address=0.0.0.0</codeph> and <codeph>server.port=8080</codeph>.</stentry>
+      </strow>
+      <strow>
+        <stentry>The <codeph>docker build</codeph> command fails because files are not found.</stentry>
+        <stentry>The Dockerfile is not in the project root folder, so Docker uses the wrong build context.</stentry>
+        <stentry>Move the <filepath>Dockerfile</filepath> to the same folder as <filepath>pom.xml</filepath> and run the command from that folder.</stentry>
+      </strow>
+      <strow>
+        <stentry>You cannot open the ECS service directly in a browser.</stentry>
+        <stentry>The service runs in a private subnet.</stentry>
+        <stentry>Open the DNS name of the Application Load Balancer instead.</stentry>
+      </strow>
+    </simpletable>
+  </refbody>
+</reference>

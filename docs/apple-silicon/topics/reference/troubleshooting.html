@@ -1,0 +1,29 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2026"><meta name="generator" content="DITA-OT"><meta name="description" content="Common problems when containerizing and deploying the application, with causes and solutions."><title>Troubleshooting</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"><link rel="stylesheet" type="text/css" href="../../style.css"></head><body id="troubleshooting"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Troubleshooting</h1>
+  
+  <div class="body refbody"><p class="shortdesc">Common problems when containerizing and deploying the application, with causes and solutions.</p>
+    <table class="simpletable"><colgroup><col style="width:28.57142857142857%"><col style="width:28.57142857142857%"><col style="width:42.857142857142854%"></colgroup><thead><tr class="sthead">
+        <th class="stentry" scope="col" id="troubleshooting__stentry__1">Problem</th>
+        <th class="stentry" scope="col" id="troubleshooting__stentry__2">Cause</th>
+        <th class="stentry" scope="col" id="troubleshooting__stentry__3">Solution</th>
+      </tr></thead><tbody><tr class="strow">
+        <td class="stentry" headers="troubleshooting__stentry__1">The image builds on your computer but the container does not run on AWS Fargate.</td>
+        <td class="stentry" headers="troubleshooting__stentry__2">The image was built for ARM64 (Apple Silicon), but Fargate runs Linux/AMD64.</td>
+        <td class="stentry" headers="troubleshooting__stentry__3">Rebuild the image with <code class="ph codeph">docker build --platform linux/amd64 -t helloworld .</code></td>
+      </tr><tr class="strow">
+        <td class="stentry" headers="troubleshooting__stentry__1">The application is not reachable from outside the container.</td>
+        <td class="stentry" headers="troubleshooting__stentry__2">The application listens only on the local address.</td>
+        <td class="stentry" headers="troubleshooting__stentry__3">In <span class="ph filepath">application.properties</span>, set <code class="ph codeph">server.address=0.0.0.0</code> and <code class="ph codeph">server.port=8080</code>.</td>
+      </tr><tr class="strow">
+        <td class="stentry" headers="troubleshooting__stentry__1">The <code class="ph codeph">docker build</code> command fails because files are not found.</td>
+        <td class="stentry" headers="troubleshooting__stentry__2">The Dockerfile is not in the project root folder, so Docker uses the wrong build context.</td>
+        <td class="stentry" headers="troubleshooting__stentry__3">Move the <span class="ph filepath">Dockerfile</span> to the same folder as <span class="ph filepath">pom.xml</span> and run the command from that folder.</td>
+      </tr><tr class="strow">
+        <td class="stentry" headers="troubleshooting__stentry__1">You cannot open the ECS service directly in a browser.</td>
+        <td class="stentry" headers="troubleshooting__stentry__2">The service runs in a private subnet.</td>
+        <td class="stentry" headers="troubleshooting__stentry__3">Open the DNS name of the Application Load Balancer instead.</td>
+      </tr></tbody></table>
+  </div>
+</article></main></body></html>

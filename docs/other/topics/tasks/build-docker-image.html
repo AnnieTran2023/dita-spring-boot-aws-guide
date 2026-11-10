@@ -1,0 +1,28 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2026"><meta name="generator" content="DITA-OT"><meta name="description" content="Package the Spring Boot application into a Docker image that can run on AWS."><title>Build the Docker image</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"><link rel="stylesheet" type="text/css" href="../../style.css"></head><body id="build-docker-image"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Build the Docker image</h1>
+  
+  <div class="body taskbody"><p class="shortdesc">Package the Spring Boot application into a Docker image that can run on AWS.</p>
+    <section class="section prereq">
+      <ul class="ul">
+        <li class="li">JDK 17, Maven and Docker Desktop are installed.</li>
+        <li class="li">The application runs locally.</li>
+        <li class="li">A <span class="ph filepath">Dockerfile</span> exists in the project root folder.</li>
+      </ul>
+    </section>
+     <section class="section context">
+      <div class="note warning note_warning"><span class="note__title">Warning:</span> <div class="note__body">AWS resources can incur costs. Delete resources you no longer need after testing.</div></div>
+    </section>
+    <section><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Open a terminal in the project root folder.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Package the application into a JAR file:</span>
+        <div class="itemgroup info"><pre class="pre codeblock"><code>mvn clean package</code></pre></div>
+        <div class="itemgroup stepresult">The file <span class="ph filepath">helloworld-0.0.1-SNAPSHOT.jar</span> is created in the <span class="ph filepath">target</span> folder.</div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Build the image:</span>
+        <div class="itemgroup info"><pre class="pre codeblock"><code>docker build -t helloworld .</code></pre></div>
+      </li></ol></section>
+<section class="section result">The image <code class="ph codeph"><span class="ph">helloworld</span></code> is created.</section>  </div>
+</article></main></body></html>

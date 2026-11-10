@@ -8,5 +8,6 @@
   <topicref href="topics/concepts/what-is-docker.dita"/>
   <topicref href="topics/reference/prerequisites.dita"/>
   <topicref href="topics/tasks/build-docker-image.dita"/>
-<topicref href="topics/tasks/push-image-to-ecr.dita"/>
+  <topicref href="topics/tasks/push-image-to-ecr.dita"/>
+  <topicref href="topics/reference/troubleshooting.dita"/>
 </map>
